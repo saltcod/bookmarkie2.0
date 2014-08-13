@@ -1,0 +1,664 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so LESS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of LESS' great features: 
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques like box shadow and
+border-radius.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more. 
+
+******************************************************************/
+/*********************
+groupIN'
+*********************/
+.group {
+  zoom: 1;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+/* =Helpers
+----------------------------------------------- */
+.fill-grey {
+  background: #f3f3f3;
+}
+.center {
+  text-align: center;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.left {
+  float: left;
+  margin-right: 50px;
+  width: 45%;
+  text-align: left;
+}
+.right {
+  float: left;
+  width: 45%;
+  text-align: left;
+}
+.align-left {
+  text-align: left;
+}
+.big {
+  font-size: 2em;
+}
+.huge {
+  font-size: 3em;
+}
+.massive {
+  font-size: 4em;
+}
+.epic {
+  font-size: 6em;
+}
+.callout {
+  font-size: 2em;
+  font-weight: 300;
+}
+.callout-small {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+/* 
+use the best ampersand 
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+  font-style: italic;
+}
+/* text alignment */
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.alert {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+}
+.alert-help {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-color: #ddd7f2;
+  background: #edeaf8;
+}
+.alert-info {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-color: #ddd7f2;
+  background: #edeaf8;
+}
+.alert-error {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-color: #ddd7f2;
+  background: #edeaf8;
+}
+.alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid;
+  border-color: #ddd7f2;
+  background: #edeaf8;
+}
+/*********************
+BORDER RADIUS
+*********************/
+/* 
+NOTE: For older browser support (and some mobile), 
+don't use the shorthand to define *different* corners. 
+
+USAGE: .border-radius(4px); 
+
+*/
+/*********************
+TRANISTION
+*********************/
+/* .transition(all,2s); */
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can 
+really slow down your CSS. Don't overdo it.
+*********************/
+/* .css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+COLUMNS
+*********************/
+.two-col {
+  -moz-column-width: 350px;
+  -moz-column-count: 0;
+  -moz-column-gap: 50px;
+  -moz-column-rule-color: #eeeeee;
+  -moz-column-rule-style: solid;
+  -moz-column-rule-width: 1px;
+  -webkit-column-width: 350px;
+  -webkit-column-count: 0;
+  -webkit-column-gap: 50px;
+  -webkit-column-rule-color: #eeeeee;
+  -webkit-column-rule-style: solid;
+  -webkit-column-rule-width: 1px;
+  column-width: 350px;
+  column-count: 0;
+  column-gap: 50px;
+  column-rule-color: #eeeeee;
+  column-rule-style: solid;
+  column-rule-width: 1px;
+}
+.two-col p {
+  margin-top: 0;
+}
+/*********************
+BOX SHADOW
+*********************/
+/* .boxShadow(0,0,4px,0,#444); */
+/* .boxShadow(none); */
+/*********************
+BUTTONS
+*********************/
+.button,
+.button:visited {
+  border: 1px solid #473f64;
+  border-top-color: #544a77;
+  border-left-color: #544a77;
+  padding: 4px 12px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: 21px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #594e7d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#64588d), to(#594e7d));
+  background-image: -webkit-linear-gradient(top, #64588d, #594e7d);
+  background-image: -moz-linear-gradient(top, #64588d, #594e7d);
+  background-image: -o-linear-gradient(top, #64588d, #594e7d);
+  background-image: linear-gradient(to bottom, #64588d, #594e7d);
+}
+.button:hover,
+.button:visited:hover,
+.button:focus,
+.button:visited:focus {
+  color: #ffffff;
+  border: 1px solid #473f64;
+  border-top-color: #37314e;
+  border-left-color: #37314e;
+  background-color: #4e446e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#594e7d), to(#4e446e));
+  background-image: -webkit-linear-gradient(top, #594e7d, #4e446e);
+  background-image: -moz-linear-gradient(top, #594e7d, #4e446e);
+  background-image: -o-linear-gradient(top, #594e7d, #4e446e);
+  background-image: linear-gradient(to bottom, #594e7d, #4e446e);
+}
+.button:active,
+.button:visited:active {
+  background-color: #64588d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#594e7d), to(#64588d));
+  background-image: -webkit-linear-gradient(top, #594e7d, #64588d);
+  background-image: -moz-linear-gradient(top, #594e7d, #64588d);
+  background-image: -o-linear-gradient(top, #594e7d, #64588d);
+  background-image: linear-gradient(to bottom, #594e7d, #64588d);
+}
+.blue-button,
+.blue-button:visited {
+  border-color: #4e446e;
+  text-shadow: 0 1px 1px #4e446e;
+  background-color: #594e7d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#64588d), to(#594e7d));
+  background-image: -webkit-linear-gradient(top, #64588d, #594e7d);
+  background-image: -moz-linear-gradient(top, #64588d, #594e7d);
+  background-image: -o-linear-gradient(top, #64588d, #594e7d);
+  background-image: linear-gradient(to bottom, #64588d, #594e7d);
+  -webkit-box-shadow: inset 0 0 3px #8f84b2;
+  -moz-box-shadow: inset 0 0 3px #8f84b2;
+  box-shadow: inset 0 0 3px #8f84b2;
+}
+.blue-button:hover,
+.blue-button:visited:hover,
+.blue-button:focus,
+.blue-button:visited:focus {
+  border-color: #433b5e;
+  background-color: #4e446e;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#5b5080), to(#4e446e));
+  background-image: -webkit-linear-gradient(top, #5b5080, #4e446e);
+  background-image: -moz-linear-gradient(top, #5b5080, #4e446e);
+  background-image: -o-linear-gradient(top, #5b5080, #4e446e);
+  background-image: linear-gradient(to bottom, #5b5080, #4e446e);
+}
+.blue-button:active,
+.blue-button:visited:active {
+  background-color: #64588d;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#594e7d), to(#64588d));
+  background-image: -webkit-linear-gradient(top, #594e7d, #64588d);
+  background-image: -moz-linear-gradient(top, #594e7d, #64588d);
+  background-image: -o-linear-gradient(top, #594e7d, #64588d);
+  background-image: linear-gradient(to bottom, #594e7d, #64588d);
+}
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.less styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is grouped inside mixins.scss */
+.menu {
+  /* end .menu ul */
+}
+.menu ul {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+.menu ul li {
+  /*
+				plan your menus and drop-downs wisely.
+				*/
+}
+.menu ul li a {
+  /*
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/
+}
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */
+}
+.entry-content .alignleft,
+.entry-content img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+.entry-content .alignright,
+.entry-content img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+.entry-content .aligncenter,
+.entry-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/* import grid */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.less stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+/* =Grid / Columns
+----------------------------------------------- */
+.row {
+  background: white;
+  margin: 0 0 20px 0;
+}
+.row:after {
+  /* Or @extend clearfix */
+  content: "";
+  display: table;
+  clear: both;
+}
+[class*='col-'] {
+  float: left;
+  margin: 0 3% 3% 0;
+}
+.row [class*='col-']:last-of-type {
+  padding-right: 0;
+  margin-right: 0;
+}
+.col-2-3 {
+  width: 63.666666%;
+}
+.col-1-3 {
+  width: 30.3333%;
+}
+.col-1-2 {
+  width: 48.5%;
+}
+.col-1-4 {
+  width: 22.7%;
+}
+.col-3-4 {
+  width: 72%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+.pad1x {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pad2x {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.pad4x {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.pad1y {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.pad2y {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.pad4y {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/* Opt-in outside padding */
+.row-pad {
+  padding: 20px 0 20px 20px;
+}
+.row-pad [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+.keyline-all {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.keyline-top {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.keyline-right {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.keyline-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.keyline-left {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  max-width: 1140px;
+}
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  background: #eee;
+  border: 0;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */
+}
+.nav li {
+  float: left;
+  position: relative;
+  /*
+		plan your menus and drop-downs wisely.
+		*/
+  /* showing sub-menus */
+}
+.nav li a {
+  border-bottom: 0;
+  /*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+}
+.nav li a:hover,
+.nav li a:focus {
+  background-color: #dedede;
+}
+.nav li ul.sub-menu,
+.nav li ul.children {
+  margin-top: 0;
+  border: 1px solid #ccc;
+  border-top: 0;
+  position: absolute;
+  display: none;
+  z-index: 8999;
+  /* highlight sub-menu current page */
+}
+.nav li ul.sub-menu li,
+.nav li ul.children li {
+  /*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+}
+.nav li ul.sub-menu li a,
+.nav li ul.children li a {
+  padding-left: 10px;
+  border-right: 0;
+  display: block;
+  width: 180px;
+  border-bottom: 1px solid #ccc;
+}
+.nav li ul.sub-menu li:last-child a,
+.nav li ul.children li:last-child a {
+  border-bottom: 0;
+}
+.nav li:hover ul {
+  top: auto;
+  display: block;
+}
+/* end .nav */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em;
+}
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0;
+}
+.widget ul li {
+  margin-bottom: 0.75em;
+  /* deep nesting */
+}
+.widget ul li ul {
+  margin-top: 0.75em;
+  padding-left: 1em;
+}
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+			be careful with the depth of your menus.
+			it's very rare to have multi-depth menus in
+			the footer.
+			*/
+}
+/* end .footer-links */
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop. 
+
+******************************************************************/
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/

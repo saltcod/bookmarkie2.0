@@ -1,0 +1,29 @@
+/******************************************************************
+Theme Name: Bookmarkie 2.0
+Description: The next generation of Bookmarks.
+Author: Terry Sutton
+Version: 0.1
+
+
+MAKE SURE TO READ BELOW BEFORE GETTING STARTED FOR THE FIRST TIME!
+------------------------------------------------------------------
+
+You may be thinking…
+
+WHOA, WHOA, WHOA…WHAT HAPPENED HERE?
+
+But before you freak out, let me take a minute to explain how
+to get this working.
+
+
+Your two main files are:
+
+1. style.less
+	— ties everything together. 
+	— includes all of the _partial files, at the appropriate
+	time, via media queries.
+
+2. _base.less
+	— this is the main part you need to get your head around
+	— this theme is mobile first. Hence, everything starts with _base and builds from there. 
+	— you essentially override or add to the base styles as you go up in viewport

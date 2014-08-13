@@ -1,0 +1,455 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+------------ MAP ------------
+
+01. GENERAL STYLES
+02. WORDPRESS BODY CLASSES
+03. LAYOUT & GRID STYLES
+04. LINK STYLES
+05. H1, H2, H3, H4, H5 STYLES
+06. HEADER STYLES
+07. NAVIGATION STYLES
+08. POSTS & CONTENT STYLES
+09. PAGE NAVI STYLES
+10. COMMENT STYLES
+11. COMMENT FORM STYLES
+12. SIDEBARS & ASIDES
+13. IMAGES & MEDIA
+14. FOOTER STYLES
+15. TABLE STYLES
+16. SCROLLPANE SIDEBAR
+
+******************************************************************/
+.icon{
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+
+
+/*********************
+01. GENERAL STYLES
+*********************/
+
+html, body {
+	/* height: 100%; */
+}
+body {
+	font-family: $sans;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #222;
+	background: #F9F9F6;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/*********************
+03. LAYOUT & GRID STYLES
+*********************/
+
+.wrap {
+	width: 96%;
+	margin: 0 auto;
+}
+#container {}
+
+#main {
+	margin-left: 20%;
+	max-width: 1040px;
+	min-height: 1000px;
+	padding: 25px 35px;
+	margin-top: 20px;
+	@include breakpoint(mobile){
+		margin-left: 0; padding: 0;
+	}
+}
+
+/*********************
+04. LINK STYLES
+*********************/
+
+a{
+	color: #222;
+	text-decoration: none;
+}
+
+/******************************************************************
+05. H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 400;
+	/*
+	if you're going to use webfonts, be sure to check your weights
+	http://css-tricks.com/watch-your-font-weight/
+	*/
+
+	/* removing text decoration from all headline links */
+	a {
+		text-decoration: none;
+	}
+}
+
+h1, .h1 {
+	font-size: 2.5em;
+	line-height: 1.333em;
+}
+
+h2, .h2 {
+	font-size: 1.5em;
+	line-height: 1.4em;
+	margin-bottom: 0.375em;
+}
+
+h3, .h3 {
+	font-size: 1.125em;
+	font-weight: 600;
+}
+
+h4, .h4 {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 0.846em;
+	line-height: 2.09em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.entry-title {
+	font-weight: 300;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+	font-size: 26px;
+	padding-right: 75px;
+}
+
+
+
+/*********************
+06. HEADER STYLES
+*********************/
+
+
+
+.site-title {
+	font-size: 24px;
+	font-family: $sans;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	position: fixed;
+	left: 25px; top: 25px;
+
+	@include breakpoint(mobile){
+		display: none;
+	}
+}
+ 
+
+
+/**************************
+08. POSTS & CONTENT STYLES
+**************************/
+
+article {
+	background: #FFF;
+	margin-bottom: 25px;
+	padding: 10px;
+}
+.entry-content { 
+	float: left;  
+	max-width: 620px;
+	font-size: 22px;
+	p { padding: 0; margin: 0;}
+    
+
+	a {
+		@include transition();
+	&:hover{ color: #677 }
+		
+	}
+}
+.tags {
+	float: right;
+	padding-top: 8px;
+		color: #ccc; 
+	a { 
+		color: #ccc; 
+		text-transform: uppercase; 
+		@include transition();
+		&:hover { color: #999;} 
+	}
+} 
+
+.archive-title {
+	margin-bottom: 25px;
+	span {border-bottom: 1px solid;}
+	&:before{
+		content: '';   
+		background: url(../images/tag.svg) 0px 8px no-repeat;
+		background-size: 15px;
+		padding-left: 15px;
+		border-bottom: none;
+	}
+}
+
+
+/******************************************************************
+09. PAGE NAVI STYLES
+******************************************************************/
+  .pagination{
+      .page-numbers {
+          li { float: left; margin-right: 25px;}
+          .current { 
+          	background: #000; 
+          	color: #fff; padding: 0 5px; }
+      }
+  }
+
+.previous-page a,
+.next-page a {
+	text-indent: -9999px;
+	display: inline-block;
+	height: 32px;
+	width: 22px;
+}
+
+.previous-page a { 
+	background: url(../../images/arrow-left.png);
+	&:hover {background: url(../../images/arrow-left-active.png);}
+	margin-right: 10px;
+
+}
+.next-page a {
+	background: url(../../images/arrow-right.png);
+	&:hover {background: url(../../images/arrow-right-active.png);}
+	color: #ccc;
+}
+
+
+
+/*********************
+12. SIDEBARS & ASIDES
+*********************/
+
+.sidebar {
+	font: 12px "Lucida Grande", "Helvetica", sans-serif;	
+	padding: 75px 25px 25px 10px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 24%;
+	font-weight: normal;
+	line-height: 1.8;
+}
+
+
+.nano-content {
+	li { 
+		font-weight: normal;  
+		margin-left: 5px;
+		font-size: 12px;
+		margin-bottom: 6px;
+	}
+	a { &:hover {  text-decoration: underline;}}
+}
+
+
+.nano-content > .all-pages > li   {
+	font-weight: bold;
+	font-size: 15px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid ;
+
+
+}
+
+
+.all-pages .children >  li {
+	a {&:hover { border-bottom: 1px solid } } }
+
+	.children{
+		padding-left: 4px;
+		li:before {
+			content: '-';
+			padding-right: 12px;
+			text-decoration: none;
+		}
+	}
+
+	.current-page-item{ 
+		font-weight: bold; 
+		border-bottom: 1px solid;
+	}
+
+	.module-parent > ul {
+		padding: 0; 
+		margin-left: -5px;
+
+		> li{
+			margin-left: 0;
+			padding-left: 0;
+			margin-bottom: 35px;
+			border-bottom: 1px solid ;
+			&:last-child { border-bottom: none;}
+			> a {font-weight: bold;}
+			&:before { 
+				content: '';
+				padding: 0;
+				margin: 0;
+			}	
+		}
+	}
+
+
+
+	.widgettitle {}
+
+	.widget {
+
+		ul {
+
+			li {
+
+				&:first-child {}
+
+				&:last-child {}
+
+				a {}
+
+				/* deep nesting */
+				ul {}
+
+			}
+
+		}
+
+	}
+
+
+
+
+
+/******************************************************************
+Mobile!
+******************************************************************/
+
+.mobile-header{
+	border-bottom: 1px solid;
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+	.mobile-site-title{
+	    display: inline-block;
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    font-size: 28px;
+	    margin-top: 25px;
+	    margin-left: 10px;
+	}
+
+	@extend %group;
+	@include breakpoint(desktop){
+		 display: none;
+		 background: pink;
+	}
+}
+.toggle-menu {
+	img { width: 25px;  }
+	svg { fill: red; }
+	&.active img{ background: red;}
+}
+
+.sidebar{
+	@include breakpoint(mobile){
+		margin-left: -150px;
+		margin-top: 120px;
+		padding-top: 25px;
+		&.open {
+			margin-left: 0;
+			background: white;
+			width: 250px;
+			@include box-shadow(0, 10px, 25px, rgba(0,0,0,.25))
+		}
+	}
+} 
+
+/*********************
+16. NANO SCROLLER
+*********************/
+
+.nano { width: 1500px; height: 500px; }
+.nano .nano-content { padding: 10px; }
+.nano .nano-pane   { background: #888; }
+.nano .nano-slider { background: #111; }
+
+.nano {
+	position : relative;
+	width    : 100%;
+	height   : 100%;
+	overflow : hidden;
+}
+.nano > .nano-content {
+	position      : absolute;
+	overflow      : scroll;
+	overflow-x    : hidden;
+	top           : 0;
+	right         : 0;
+	bottom        : 0;
+	left          : 0;
+}
+.nano > .nano-content:focus {
+	outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+	visibility: hidden;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+	visibility: visible;
+}
+.nano > .nano-pane {
+	background : rgba(0,0,0,.25);
+	position   : absolute;
+	width      : 10px;
+	right      : 0;
+	top        : 0;
+	bottom     : 0;
+	visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+	opacity    : .01;
+	-webkit-transition    : .2s;
+	-moz-transition       : .2s;
+	-o-transition         : .2s;
+	transition            : .2s;
+	-moz-border-radius    : 5px;
+	-webkit-border-radius : 5px;
+	border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+	background: #444;
+	background: rgba(0,0,0,.5);
+	position              : relative;
+	margin                : 0 1px;
+	-moz-border-radius    : 3px;
+	-webkit-border-radius : 3px;
+	border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+	visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+	opacity    : 0.99;
+}
